@@ -25,7 +25,7 @@ commands:
           name: Revert migrations
           when: on_fail
           command: |
-            SUCCESS=$(curl --insecure  https://kvdb.io/R18jTZHbdWGwUEkFH5sHDZ/migration_<< parameters.workflow_id >>)
+            SUCCESS=$(curl --insecure  https://kvdb.io/WZyCj9hLEWb632wejR3GoU/migration_<< parameters.workflow_id >>)
             echo $SUCCESS
             # Logic for reverting the database state
             if (( $SUCCESS == 1 ));
@@ -263,7 +263,7 @@ jobs:
             yum update -y && yum install -y sudo
             sudo yum install -y gcc-c++ make
             curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
-            sudo yum install nodejs-12.22.6-1nodesource -y
+            sudo yum install nodejs -y
             yum install tar -y
             yum install gzip -y
             # Use n version manager to use Node.js v13.8.0
