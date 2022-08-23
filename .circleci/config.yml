@@ -263,7 +263,7 @@ jobs:
             yum update -y && yum install -y sudo
             sudo yum install -y gcc-c++ make
             curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
-            sudo yum install nodejs -y
+            sudo yum install nodejs-12.22.6-1nodesource -y
             yum install tar -y
             yum install gzip -y
             # Use n version manager to use Node.js v13.8.0
@@ -321,4 +321,4 @@ workflows:
           requires: [configure-infrastructure]
       - deploy-frontend:
           requires: [run-migrations]
-      
+
